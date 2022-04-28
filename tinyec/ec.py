@@ -92,7 +92,7 @@ class Inf(object):
 
     def __add__(self, other):
         if isinstance(other, Inf):
-            return Inf()
+            return Inf(self.curve)
         if isinstance(other, Point):
             return other
         raise TypeError("Unsupported operand type(s) for +: '%s' and '%s'" % (other.__class__.__name__,
@@ -100,7 +100,7 @@ class Inf(object):
 
     def __sub__(self, other):
         if isinstance(other, Inf):
-            return Inf()
+            return Inf(self.curve)
         if isinstance(other, Point):
             return other
         raise TypeError("Unsupported operand type(s) for +: '%s' and '%s'" % (other.__class__.__name__,
